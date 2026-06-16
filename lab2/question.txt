@@ -1,0 +1,15 @@
+Đọc một hình ảnh bất kỳ từ máy tính và thực hiện các yêu cầu sau:
+I> Toán Tử Điểm Ảnh
+1. Thay đổi độ sáng: Tăng hoặc giảm độ sáng của toàn bộ hình ảnh bằng cách cộng hoặc trừ một giá trị cố định cho mỗi điểm ảnh.
+2. Thay đổi độ tương phản: Tăng hoặc giảm độ tương phản bằng cách nhân mỗi điểm ảnh với một hằng số.
+3. Biến đổi âm bản: Đảo ngược các giá trị điểm ảnh, tạo ra ảnh âm bản.
+4. Cắt ngưỡng: Tạo ảnh nhị phân bằng cách so sánh giá trị mỗi điểm ảnh với một ngưỡng nhất định.
+II> Lọc Tuyến Tính
+1. Lọc trung bình: Làm mờ ảnh bằng cách tính giá trị trung bình của các điểm ảnh trong một vùng lân cận.
+2. Lọc Gaussian: Làm mờ ảnh một cách tự nhiên hơn bằng cách sử dụng kernel Gaussian.
+3. Làm sắc nét: Tăng cường các cạnh trong ảnh bằng cách sử dụng các kernel thích hợp.
+III> Bài tập nâng cao
+1. Phát hiện cạnh: Sử dụng các kernel Sobel, Prewitt để phát hiện các cạnh trong ảnh.
+2. Tự thiết kế kernel: Tạo các kernel tùy chỉnh để đạt được các hiệu ứng khác nhau.
+3. So sánh các loại lọc: So sánh hiệu quả của các loại lọc khác nhau trên cùng một hình ảnh.
+4. Áp dụng lọc phi tuyến tính: Tìm hiểu về các loại lọc không tuyến tính như median filter, bilateral filter

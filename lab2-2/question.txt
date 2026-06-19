@@ -1,0 +1,17 @@
+II> Bài tập thực hành:
+
+1. Thực hiện thuật toán Canny bằng các thư viện:
+   o OpenCV: Sử dụng hàm cv2.Canny để phát hiện cạnh.
+   o Scikit-image: Sử dụng hàm skimage.feature.canny để phát hiện cạnh.
+
+2. Thay đổi các tham số và quan sát kết quả:
+   o Thay đổi sigma, ngưỡng thấp, ngưỡng cao để xem ảnh hưởng của chúng đến kết quả.
+   o So sánh kết quả với các giá trị mặc định.
+
+3. Áp dụng Canny cho các loại ảnh khác nhau:
+   o Ảnh có nhiều nhiễu, ảnh có độ tương phản thấp, ảnh có nhiều chi tiết.
+   o Đánh giá kết quả và rút ra kết luận.
+
+4. Kết hợp Canny với các kỹ thuật khác:
+   o Kết hợp với các thuật toán phân đoạn để tìm các vùng trong ảnh.
+   o Kết hợp với các thuật toán nhận dạng hình dạng để tìm các đối tượng trong ảnh.

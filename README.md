@@ -12,7 +12,7 @@ lab/
 │   ├── chapter01_image_fundamentals/      # Chương 1: Cơ bản về ảnh
 │   ├── chapter02_image_filtering/         # Chương 2: Lọc ảnh
 │   ├── chapter03_edge_detection/          # Chương 3: Phát hiện cạnh
-│   ├── chapter04_image_similarity/        # Chương 4: Tương đồng ảnh
+│   ├── chapter04_wavelet_hashing/         # Chương 4: So sánh ảnh dùng Wavelet
 │   └── chapter05_face_recognition/        # Chương 5: Nhận diện khuôn mặt
 ├── docs/                                  # Tài liệu dự án
 ├── commands/                              # Định nghĩa lệnh AI agent
@@ -28,8 +28,9 @@ lab/
 | 1 | Cơ Bản Về Ảnh | Đọc/ghi ảnh, không gian màu, crop/resize, vẽ hình, văn bản |
 | 2 | Lọc Ảnh | Biến đổi điểm ảnh, Median, Gaussian, Sharpen, Sobel, Emboss, Bilateral |
 | 3 | Phát Hiện Cạnh | Canny (OpenCV & Scikit-image), Phân tích tham số, Đánh giá, Contour, Shape Detection |
-| 4 | Tương Đồng Ảnh | Haar Cascade, HOG+SVM, Template Matching |
+| 4 | So Sánh Ảnh Dùng Wavelet | Biến đổi DWT (PyWavelets), Lượng tử hóa, wHash chuẩn, Khoảng cách Hamming, ROC Curve, Tìm kiếm ảnh |
 | 5 | Nhận Diện Khuôn Mặt | MTCNN, FaceNet, Embedding, Cosine Similarity, Nhận diện thời gian thực qua Webcam |
+
 
 ## Cài Đặt
 
@@ -39,13 +40,14 @@ lab/
 
 ### Cài Thư Viện
 ```bash
-pip install opencv-python numpy matplotlib pillow scikit-image jupyter
+pip install opencv-python numpy matplotlib pillow scikit-image PyWavelets jupyter
 ```
 
 Đối với Chương 5 (Face Recognition), cài thêm:
 ```bash
 pip install facenet-pytorch torch
 ```
+
 
 ### Chạy Notebook
 ```bash

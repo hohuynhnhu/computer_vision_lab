@@ -19,6 +19,12 @@
 - [x] Tài liệu documents/ đầy đủ 6 file
 - [x] Notes chi tiết cho 4 phần
 
+### Chương 4: So Sánh Ảnh Dùng Wavelet ✓
+- [x] 3 notebook: `wavelet_hashing`, `model_evaluation`, `image_retrieval` hoàn chỉnh
+- [x] 2 ảnh output: `roc_curve.png`, `retrieval_result.png`
+- [x] Tài liệu documents/ đầy đủ 6 file
+- [x] Notes chi tiết (wavelet_notes.md)
+
 ## 2. Giai Đoạn 2: Mở Rộng (Dự Kiến)
 
 ### Chương 4: Phát Hiện Đối Tượng

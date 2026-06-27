@@ -1,4 +1,4 @@
-# Computer Vision Lab - Phòng Thực Hành Thị Giác Máy Tính
+`# Computer Vision Lab - Phòng Thực Hành Thị Giác Máy Tính
 
 ## Giới Thiệu
 
@@ -8,15 +8,17 @@ Dự án bài tập thực hành môn **Thị giác Máy tính (Computer Vision)
 
 ```
 lab/
-├── chapters/                          # Nội dung bài tập
-│   ├── chapter01_image_fundamentals/  # Chương 1: Cơ bản về ảnh
-│   ├── chapter02_image_filtering/     # Chương 2: Lọc ảnh
-│   └── chapter03_edge_detection/      # Chương 3: Phát hiện cạnh
-├── docs/                              # Tài liệu dự án
-├── commands/                          # Định nghĩa lệnh AI agent
-├── knowledge_base/                    # Cơ sở tri thức
-├── memory/                            # Bộ nhớ agent (bài học)
-└── README.md                          # File này
+├── chapters/                              # Nội dung bài tập
+│   ├── chapter01_image_fundamentals/      # Chương 1: Cơ bản về ảnh
+│   ├── chapter02_image_filtering/         # Chương 2: Lọc ảnh
+│   ├── chapter03_edge_detection/          # Chương 3: Phát hiện cạnh
+│   ├── chapter04_image_similarity/        # Chương 4: Tương đồng ảnh
+│   └── chapter05_face_recognition/        # Chương 5: Nhận diện khuôn mặt
+├── docs/                                  # Tài liệu dự án
+├── commands/                              # Định nghĩa lệnh AI agent
+├── knowledge_base/                        # Cơ sở tri thức
+├── memory/                                # Bộ nhớ agent (bài học)
+└── README.md                              # File này
 ```
 
 ## Chương Trình Học
@@ -26,6 +28,8 @@ lab/
 | 1 | Cơ Bản Về Ảnh | Đọc/ghi ảnh, không gian màu, crop/resize, vẽ hình, văn bản |
 | 2 | Lọc Ảnh | Biến đổi điểm ảnh, Median, Gaussian, Sharpen, Sobel, Emboss, Bilateral |
 | 3 | Phát Hiện Cạnh | Canny (OpenCV & Scikit-image), Phân tích tham số, Đánh giá, Contour, Shape Detection |
+| 4 | Tương Đồng Ảnh | Haar Cascade, HOG+SVM, Template Matching |
+| 5 | Nhận Diện Khuôn Mặt | MTCNN, FaceNet, Embedding, Cosine Similarity, Nhận diện thời gian thực qua Webcam |
 
 ## Cài Đặt
 
@@ -38,6 +42,11 @@ lab/
 pip install opencv-python numpy matplotlib pillow scikit-image jupyter
 ```
 
+Đối với Chương 5 (Face Recognition), cài thêm:
+```bash
+pip install facenet-pytorch torch
+```
+
 ### Chạy Notebook
 ```bash
 cd chapters/chapter01_image_fundamentals/notebook
@@ -48,11 +57,13 @@ jupyter notebook chapter01.ipynb
 
 | Công Nghệ | Mục Đích |
 |-----------|----------|
-| **OpenCV** | Xử lý ảnh chính (đọc/ghi, lọc, Canny, contour) |
+| **OpenCV** | Xử lý ảnh chính (đọc/ghi, lọc, Canny, contour, webcam) |
 | **NumPy** | Xử lý mảng, tính toán số học |
 | **Matplotlib** | Hiển thị ảnh và biểu đồ |
 | **Pillow** | Hỗ trợ đọc/ghi ảnh đa định dạng |
 | **Scikit-image** | Phát hiện cạnh Canny (thư viện thứ hai) |
+| **Facenet-PyTorch** | MTCNN (phát hiện khuôn mặt) + FaceNet (trích xuất embedding) |
+| **PyTorch** | Backend deep learning cho MTCNN và FaceNet |
 | **Jupyter** | Môi trường thực hành tương tác |
 
 ## Cách Sử Dụng

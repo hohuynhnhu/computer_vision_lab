@@ -19,7 +19,7 @@ Sinh viên cần nắm vững các kỹ thuật lọc ảnh, từ biến đổi 
 
 | STT | Yêu Cầu | Mô Tả |
 |-----|---------|-------|
-| 5 | Lọc trung vị (Median) | Giảm nhiễu muối tiêu bằng cách thay pixel bằng giá trị trung vị của cửa sổ lân cận |
+| 5 | Lọc trung bình (Mean) | Giảm nhiễu bằng cách thay pixel bằng giá trị trung bình của cửa sổ lân cận |
 | 6 | Lọc Gaussian | Làm mờ ảnh bằng kernel phân phối chuẩn |
 | 7 | Lọc làm sắc nét (Sharpen) | Tăng cường chi tiết và biên ảnh bằng kernel tăng cường |
 
@@ -48,7 +48,7 @@ outputs/
 │   ├── negative.jpg
 │   └── binary_threshold.jpg
 ├── linear_filters/
-│   ├── median_filtered.jpg
+│   ├── mean_filtered.jpg
 │   ├── gaussian_filtered.jpg
 │   └── sharpened.jpg
 └── advanced_filters/
@@ -62,5 +62,5 @@ outputs/
 ## 5. Ràng Buộc
 
 - Sử dụng OpenCV và NumPy
-- Kernel size của median và gaussian phải là số lẻ
+- Kernel size của mean và gaussian phải là số lẻ
 - Giá trị pixel phải nằm trong khoảng [0, 255] (dùng `np.clip` hoặc `np.uint8`)

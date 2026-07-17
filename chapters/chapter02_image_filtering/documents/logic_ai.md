@@ -25,11 +25,11 @@ Kernel 3x3                 Ảnh gốc (vùng 3x3)        Pixel mới
 
 ## 2. Các Loại Bộ Lọc
 
-### 2.1 Lọc Trung Vị (Median Filter)
+### 2.1 Lọc Trung Bình (Mean Filter)
 
-- **Nguyên lý**: Thay pixel tâm bằng giá trị trung vị của tất cả pixel trong cửa sổ lân cận
-- **Ưu điểm**: Loại bỏ nhiễu xung (salt-and-pepper noise) mà không làm mờ cạnh
-- **Lưu ý**: Là bộ lọc **phi tuyến** vì không dùng công thức tổng có trọng số
+- **Nguyên lý**: Thay pixel tâm bằng giá trị trung bình của tất cả pixel trong cửa sổ lân cận
+- **Ưu điểm**: Loại bỏ nhiễu Gauss, làm mờ ảnh hiệu quả
+- **Lưu ý**: Là bộ lọc **tuyến tính** vì dùng công thức tổng có trọng số
 
 ### 2.2 Lọc Gaussian
 

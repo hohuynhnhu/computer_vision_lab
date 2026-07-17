@@ -15,7 +15,7 @@
 
 | STT | Tính Năng | Đầu Vào | Đầu Ra | Hàm OpenCV |
 |-----|-----------|---------|--------|------------|
-| 7 | Lọc trung vị (Median) | Ảnh RGB | Ảnh sau lọc trung vị | `cv2.medianBlur()` |
+| 7 | Lọc trung bình (Mean) | Ảnh RGB | Ảnh sau lọc trung bình | `cv2.blur()` |
 | 8 | Lọc Gaussian | Ảnh RGB | Ảnh làm mờ mượt | `cv2.GaussianBlur()` |
 | 9 | Lọc làm sắc nét (Sharpen) | Ảnh RGB | Ảnh sắc nét hơn | `cv2.filter2D()` + kernel tùy chỉnh |
 

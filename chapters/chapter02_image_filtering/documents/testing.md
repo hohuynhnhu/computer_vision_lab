@@ -17,10 +17,10 @@
 
 | Test Case | Dữ Liệu Vào | Tham Số | Kết Quả Mong Đợi | Trạng Thái |
 |-----------|-------------|---------|------------------|------------|
-| Median filter | `anh.jpg` | k=3 | Ảnh mịn hơn, giảm nhiễu | ✓ Pass |
+| Mean filter | `anh.jpg` | k=3 | Ảnh mịn hơn, giảm nhiễu | ✓ Pass |
 | Gaussian filter | `anh.jpg` | k=5, σ=0 | Ảnh mờ đều, mượt | ✓ Pass |
 | Sharpen filter | `anh.jpg` | kernel 3×3 | Chi tiết nổi bật hơn | ✓ Pass |
-| Median ksize chẵn | - | k=4 | `ValueError` | ✓ Pass |
+| Mean ksize chẵn | - | k=4 | `ValueError` | ✓ Pass |
 
 ### Part III: Bộ Lọc Nâng Cao
 
@@ -43,7 +43,7 @@ outputs/
 │   ├── negative.jpg               (~200 KB)
 │   └── binary_threshold.jpg       (~30 KB)
 ├── linear_filters/
-│   ├── median_filtered.jpg        (~210 KB)
+│   ├── mean_filtered.jpg            (~210 KB)
 │   ├── gaussian_filtered.jpg      (~174 KB)
 │   └── sharpened.jpg              (~358 KB)
 └── advanced_filters/
@@ -60,5 +60,5 @@ outputs/
 |-----|-------------|----------------|
 | Ảnh quá sáng/tối sau biến đổi | Quên `np.clip` | Luôn dùng `np.clip(..., 0, 255)` |
 | Tràn số (overflow) | Dùng `np.uint8` trực tiếp với phép cộng/nhân | Chuyển sang `np.float32` trước |
-| `ValueError: Kernel size must be an odd integer` | Kernel chẵn cho median filter | Dùng kernel size lẻ (3, 5, 7,...) |
+| `ValueError: Kernel size must be an odd integer` | Kernel chẵn cho mean filter | Dùng kernel size lẻ (3, 5, 7,...) |
 | Cạnh sau Sobel không rõ | Không có `np.clip` hoặc sai kernel | Kiểm tra kernel và thêm `np.clip` |

@@ -26,7 +26,7 @@ lab/
 | Chương | Chủ Đề | Nội Dung Chính |
 |--------|--------|----------------|
 | 1 | Cơ Bản Về Ảnh | Đọc/ghi ảnh, không gian màu, crop/resize, vẽ hình, văn bản |
-| 2 | Lọc Ảnh | Biến đổi điểm ảnh, Median, Gaussian, Sharpen, Sobel, Emboss, Bilateral |
+| 2 | Lọc Ảnh | Biến đổi điểm ảnh, Mean, Gaussian, Sharpen, Sobel, Emboss, Bilateral |
 | 3 | Phát Hiện Cạnh | Canny (OpenCV & Scikit-image), Phân tích tham số, Đánh giá, Contour, Shape Detection |
 | 4 | So Sánh Ảnh Dùng Wavelet | Biến đổi DWT (PyWavelets), Lượng tử hóa, wHash chuẩn, Khoảng cách Hamming, ROC Curve, Tìm kiếm ảnh |
 | 5 | Nhận Diện Khuôn Mặt | MTCNN, FaceNet, Embedding, Cosine Similarity, Nhận diện thời gian thực qua Webcam |

@@ -25,7 +25,7 @@ Chương này bao quát các kỹ thuật lọc ảnh từ cơ bản đến nân
 ### Part II: Lọc Tuyến Tính (Linear Filters)
 | # | Bài | Hàm OpenCV | Ghi chú |
 |---|-----|------------|---------|
-| 7 | Lọc trung vị (Median) | `cv2.medianBlur(image, ksize)` | ksize phải là số lẻ, lọc phi tuyến, hiệu quả với nhiễu muối tiêu |
+| 7 | Lọc trung bình (Mean) | `cv2.blur(image, ksize)` | ksize phải là số lẻ, lọc tuyến tính, hiệu quả với nhiễu Gauss |
 | 8 | Lọc Gaussian | `cv2.GaussianBlur(image, (k,k), sigmaX)` | sigma=0 → OpenCV tự tính, làm mờ mượt tự nhiên |
 | 9 | Lọc sắc nét (Sharpen) | `cv2.filter2D(image, -1, kernel)` | Kernel `[[0,-1,0],[-1,6,-1],[0,-1,0]]`, tổng trọng số = 1 |
 
@@ -64,7 +64,7 @@ $$g(x,y) = \sum_{i=-a}^{a}\sum_{j=-b}^{b} f(x+i, y+j) \cdot h(i,j)$$
 ### 4. Lọc Tuyến Tính vs Phi Tuyến
 | Tuyến tính | Phi tuyến |
 |------------|-----------|
-| Gaussian, Mean, Sharpen, Sobel | Median, Bilateral |
+| Gaussian, Mean, Sharpen, Sobel | Bilateral |
 | Dùng công thức tổng có trọng số | Không theo công thức tổng trọng số |
 
 ### 5. Gaussian vs Bilateral
@@ -87,5 +87,5 @@ Tất cả notebook đọc ảnh từ `../input/anh.jpg` và độc lập với 
 |-----|-------------|----------------|
 | Ảnh quá sáng/tối sau biến đổi | Quên `np.clip` | Luôn `np.clip(..., 0, 255)` |
 | Tràn số (overflow) | Tính trực tiếp trên `uint8` | Chuyển `np.float32` trước khi tính |
-| `ValueError: Kernel size must be an odd integer` | Kernel chẵn cho median | Dùng ksize lẻ: 3, 5, 7... |
+| `ValueError: Kernel size must be an odd integer` | Kernel chẵn cho mean | Dùng ksize lẻ: 3, 5, 7... |
 | Cạnh Sobel không rõ | Thiếu `np.clip` hoặc sai kernel | Kiểm tra kernel và thêm `np.clip` |

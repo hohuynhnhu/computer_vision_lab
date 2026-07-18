@@ -4,7 +4,7 @@
 
 ## 1. Yêu cầu người dùng (User's Requirement)
 
-- **Lọc trung vị** (median filter): giảm nhiễu muối tiêu bằng cách thay pixel bằng giá trị trung vị.
+- **Lọc trung bình** (mean filter): giảm nhiễu bằng cách thay pixel bằng giá trị trung bình.
 - **Lọc Gaussian** (Gaussian blur): làm mờ ảnh bằng kernel phân phối chuẩn.
 - **Lọc làm sắc nét** (sharpen filter): tăng cường chi tiết và biên ảnh.
 
@@ -12,13 +12,13 @@
 
 | STT | Tác vụ | Input | Output |
 |-----|--------|-------|--------|
-| 1 | Lọc trung vị (Median) | Ảnh RGB | Ảnh sau lọc trung vị |
+| 1 | Lọc trung bình (Mean) | Ảnh RGB | Ảnh sau lọc trung bình |
 | 2 | Lọc Gaussian | Ảnh RGB | Ảnh làm mờ mượt |
 | 3 | Lọc làm sắc nét (Sharpen) | Ảnh RGB | Ảnh sắc nét hơn |
 
 ## 3. Giải pháp kỹ thuật (Tech Solutions)
 
-- **OpenCV**: `cv2.medianBlur()`, `cv2.GaussianBlur()`, `cv2.filter2D()`.
+- **OpenCV**: `cv2.blur()`, `cv2.GaussianBlur()`, `cv2.filter2D()`.
 - **NumPy**: tạo kernel `np.float32` cho sharpen filter.
 
 ## 4. Logic & AI
@@ -27,7 +27,7 @@
 
 $$g(x,y) = \sum_{i=-a}^{a}\sum_{j=-b}^{b} f(x+i, y+j) \cdot h(i,j)$$
 
-- **Median filter**: Thay pixel tâm bằng **trung vị** của cửa sổ lân cận → hiệu quả với nhiễu xung.
+- **Mean filter**: Thay pixel tâm bằng **trung bình** của cửa sổ lân cận → hiệu quả với nhiễu Gauss.
 - **Gaussian filter**: Trọng số kernel theo phân phối chuẩn $G(x,y) = \frac{1}{2\pi\sigma^2} e^{-\frac{x^2+y^2}{2\sigma^2}}$.
 - **Sharpen filter**: Kernel tăng cường biên:
   ```
@@ -39,10 +39,10 @@ $$g(x,y) = \sum_{i=-a}^{a}\sum_{j=-b}^{b} f(x+i, y+j) \cdot h(i,j)$$
 ## 5. Triển khai (Implementation)
 
 ```python
-def median_filter(image, kernel_size=3):
+def mean_filter(image, kernel_size=3):
     if kernel_size % 2 == 0:
         raise ValueError("Kernel size must be an odd integer.")
-    return cv2.medianBlur(image, kernel_size)
+    return cv2.blur(image, (kernel_size, kernel_size))
 
 def gaussian_filter(image, kernel_size=5):
     return cv2.GaussianBlur(image, (kernel_size, kernel_size), 0)
@@ -56,7 +56,7 @@ def sharpen_filter(image):
 
 | Test Case | Dữ liệu | Kết quả mong đợi | Trạng thái |
 |-----------|---------|------------------|------------|
-| Median filter (k=3) | `anh.jpg` | Ảnh mịn hơn | ✓ Pass |
+| Mean filter (k=3) | `anh.jpg` | Ảnh mịn hơn | ✓ Pass |
 | Gaussian filter (k=5) | `anh.jpg` | Ảnh mờ đều | ✓ Pass |
 | Sharpen filter | `anh.jpg` | Chi tiết nổi bật hơn | ✓ Pass |
 
@@ -64,7 +64,7 @@ def sharpen_filter(image):
 
 ```
 output/part2_linear_filters/
-├── median_filtered.jpg       (~210 KB)
+├── mean_filtered.jpg         (~210 KB)
 ├── gaussian_filtered.jpg     (~174 KB)
 └── sharpened.jpg             (~358 KB)
 ```

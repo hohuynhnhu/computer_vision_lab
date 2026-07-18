@@ -4,7 +4,7 @@
 
 | Công Nghệ | Vai Trò |
 |-----------|---------|
-| OpenCV (`cv2`) | Các hàm lọc: `medianBlur`, `GaussianBlur`, `filter2D`, `bilateralFilter`, `threshold` |
+| OpenCV (`cv2`) | Các hàm lọc: `blur`, `GaussianBlur`, `filter2D`, `bilateralFilter`, `threshold` |
 | NumPy | Tạo kernel (`np.float32`), tính gradient magnitude (`np.sqrt`), giới hạn giá trị (`np.clip`) |
 | Matplotlib | Hiển thị ảnh và grid so sánh |
 
@@ -48,7 +48,7 @@ Kernel (h) ──► Tích chập (convolution)
 
 | Hàm | Mục Đích | Tham Số Chính |
 |-----|----------|---------------|
-| `cv2.medianBlur(image, ksize)` | Lọc trung vị | `ksize`: kích thước kernel (số lẻ) |
+| `cv2.blur(image, ksize)` | Lọc trung bình | `ksize`: kích thước kernel (số lẻ) |
 | `cv2.GaussianBlur(image, (kw,kh), sigmaX)` | Lọc Gaussian | Kích thước kernel, sigma (0 = tự động) |
 | `cv2.filter2D(image, ddepth, kernel)` | Tích chập với kernel tùy chỉnh | `ddepth=-1`, kernel (float32) |
 | `cv2.bilateralFilter(image, d, sigmaColor, sigmaSpace)` | Lọc song phương | `d`: đường kính, `sigma`: độ lệch chuẩn |
@@ -74,17 +74,17 @@ low_contrast  = np.clip(image.astype(np.float32) * 0.5, 0, 255).astype(np.uint8)
 high_contrast = np.clip(image.astype(np.float32) * 1.5, 0, 255).astype(np.uint8)
 ```
 
-### 4.3 Lọc Trung Vị (Median Filter)
+### 4.3 Lọc Trung Bình (Mean Filter)
 
 ```python
-def median_filter(image, kernel_size=3):
+def mean_filter(image, kernel_size=3):
     if kernel_size % 2 == 0:
         raise ValueError("Kernel size must be an odd integer.")
-    return cv2.medianBlur(image, kernel_size)
+    return cv2.blur(image, (kernel_size, kernel_size))
 ```
 
-- Thay pixel tâm bằng **trung vị** của cửa sổ lân cận
-- Hiệu quả với nhiễu xung (salt-and-pepper noise)
+- Thay pixel tâm bằng **trung bình** của cửa sổ lân cận
+- Hiệu quả với nhiễu Gauss
 
 ### 4.4 Lọc Gaussian
 

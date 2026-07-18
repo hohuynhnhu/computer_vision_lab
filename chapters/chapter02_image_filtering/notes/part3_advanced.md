@@ -20,7 +20,7 @@
 
 ## 3. Giải pháp kỹ thuật (Tech Solutions)
 
-- **OpenCV**: `cv2.filter2D()` với `CV_32F`, `cv2.blur()`, `cv2.GaussianBlur()`, `cv2.bilateralFilter()`, `cv2.medianBlur()`.
+- **OpenCV**: `cv2.filter2D()` với `CV_32F`, `cv2.blur()`, `cv2.GaussianBlur()`, `cv2.bilateralFilter()`.
 - **NumPy**: `np.sqrt()` tính gradient magnitude, kernel tùy chỉnh, `np.frombuffer()`.
 - **Matplotlib**: render grid 4 ảnh thành numpy array.
 
